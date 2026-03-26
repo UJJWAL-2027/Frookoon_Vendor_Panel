@@ -135,10 +135,11 @@ const VendorOrdersScreen: React.FC<Props> = ({ navigation }) => {
                     <Text style={{ fontSize: 20 }}>📦</Text>
                     <Text style={styles.tabText}>Products</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem}>
+                <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('VendorProfile')}>
                     <Text style={{ fontSize: 20 }}>👤</Text>
                     <Text style={styles.tabText}>Profile</Text>
                 </TouchableOpacity>
+
             </View>
         </SafeAreaView>
     );

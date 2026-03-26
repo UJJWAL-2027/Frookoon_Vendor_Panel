@@ -56,9 +56,13 @@ const VendorProductListScreen: React.FC<Props> = ({ navigation }) => {
 
             {/* RIGHT ACTIONS */}
             <View style={styles.actionsContainer}>
-                <TouchableOpacity style={styles.editButton}>
+                <TouchableOpacity 
+                    style={styles.editButton}
+                    onPress={() => navigation.navigate('VendorEditProduct', { productId: item.id })}
+                >
                     <Text style={styles.editButtonText}>Edit</Text>
                 </TouchableOpacity>
+
                 <View style={styles.statusBadge}>
                     <Text style={styles.statusBadgeText}>{item.status}</Text>
                 </View>
@@ -137,10 +141,11 @@ const VendorProductListScreen: React.FC<Props> = ({ navigation }) => {
                     <Text style={{ fontSize: 20 }}>📜</Text>
                     <Text style={styles.tabText}>Orders</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem}>
+                <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('VendorProfile')}>
                     <Text style={{ fontSize: 20 }}>👤</Text>
                     <Text style={styles.tabText}>Profile</Text>
                 </TouchableOpacity>
+
             </View>
         </SafeAreaView>
     );

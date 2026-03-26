@@ -15,15 +15,8 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 // Note: Temporarily removed external icons/charts to ensure 500 error is resolved
 // We can re-add them once the base screen is stable.
 
-export type RootStackParamList = {
-    VendorSplashScreen: undefined;
-    VendorRegisterScreen: undefined;
-    VendorLogin: undefined;
+import { RootStackParamList } from '../../App';
 
-    VendorDashboard: undefined;
-    VendorOrders: undefined;
-    VendorOrderDetail: { orderId: string };
-};
 
 type VendorDashboardNavigationProp = NativeStackNavigationProp<
     RootStackParamList,
@@ -207,10 +200,11 @@ const VendorDashboardScreen: React.FC<Props> = ({ navigation }) => {
                     <Text style={{ fontSize: 20 }}>📦</Text>
                     <Text style={styles.navText}>Products</Text> {/* Changed from tabText to navText for consistency */}
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.navItem}>
+                <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('VendorProfile')}>
                     <Text style={{ fontSize: 20 }}>👤</Text>
                     <Text style={styles.navText}>Profile</Text>
                 </TouchableOpacity>
+
             </View>
         </SafeAreaView>
     );

@@ -13,6 +13,10 @@ import VendorOrdersScreen from './src/screens/VendorOrdersScreen';
 import VendorOrderDetailsScreen from './src/screens/VendorOrderDetailsScreen';
 import VendorProductListScreen from './src/screens/VendorProductListScreen';
 import VendorAddProductScreen from './src/screens/VendorAddProductScreen';
+import VendorEditProductScreen from './src/screens/VendorEditProductScreen';
+import VendorProfileScreen from './src/screens/VendorProfileScreen';
+
+
 
 export type RootStackParamList = {
   VendorSplashScreen: undefined;
@@ -23,7 +27,11 @@ export type RootStackParamList = {
   VendorOrderDetail: { orderId: string };
   VendorProductList: undefined;
   VendorAddProduct: undefined;
+  VendorEditProduct: { productId: string };
+  VendorProfile: undefined;
 };
+
+
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -75,7 +83,17 @@ function App(): React.JSX.Element {
             name="VendorAddProduct"
             component={VendorAddProductScreen}
           />
+          <Stack.Screen
+            name="VendorEditProduct"
+            component={VendorEditProductScreen}
+          />
+          <Stack.Screen
+            name="VendorProfile"
+            component={VendorProfileScreen}
+          />
         </Stack.Navigator>
+
+
       </NavigationContainer>
     </SafeAreaProvider>
   );
