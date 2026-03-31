@@ -236,6 +236,9 @@ const VendorRegisterScreen: React.FC<Props> = ({ navigation }) => {
                             </Animated.View>
                         )}
 
+
+
+
                         {/* Owner Name */}
                         <Text style={styles.inputLabel}>
                             Owner Name <Text style={styles.required}>*</Text>
